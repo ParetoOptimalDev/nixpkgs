@@ -5,10 +5,10 @@ stdenv.mkDerivation rec {
   pname = "libuv";
 
   src = fetchFromGitHub {
-    owner = pname;
-    repo = pname;
-    rev = "v${version}";
-    sha256 = "sha256-K6v+00basjI32ON27ZjC5spQi/zWCcslDwQwyosq2iY=";
+    owner = "ParetoOptimalDev";
+    repo = "libuv";
+    rev = "d3be4e19988279e92bb11a2ffe6ac0314bbc25b0";
+    sha256 = "CkLI1dKj6z7CJmFH+/gvAeRJMeQLBW3cHk7kjhb3SyI=";
   };
 
   postPatch = let
