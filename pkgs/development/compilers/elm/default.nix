@@ -18,7 +18,6 @@ let
           elmVersion = drv.version;
           registryDat = ./registry.dat;
         };
-        buildTools = drv.buildTools or [] ++ [ pkgs.makeWrapper ];
         jailbreak = true;
         postInstall = ''
           wrapProgram $out/bin/elm \
