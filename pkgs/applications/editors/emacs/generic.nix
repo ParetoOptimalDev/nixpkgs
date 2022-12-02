@@ -97,12 +97,6 @@ let emacs = (if withMacport then llvmPackages_6.stdenv else stdenv).mkDerivation
       "tramp-process-running-p"
     ]))
 
-    # Reduce closure size by cleaning the environment of the emacs dumper
-    ''
-      substituteInPlace src/Makefile.in \
-        --replace 'RUN_TEMACS = ./temacs' 'RUN_TEMACS = env -i ./temacs'
-    ''
-
     ''
     substituteInPlace lisp/international/mule-cmds.el \
       --replace /usr/share/locale ${gettext}/share/locale
