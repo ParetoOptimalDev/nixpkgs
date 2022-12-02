@@ -163,6 +163,10 @@ let emacs = (if withMacport then llvmPackages_6.stdenv else stdenv).mkDerivation
 
   hardeningDisable = [ "format" ];
 
+  makeFlags = [
+    "V=1"
+  ];
+
   configureFlags = [
     "--disable-build-details" # for a (more) reproducible build
     "--with-modules"
