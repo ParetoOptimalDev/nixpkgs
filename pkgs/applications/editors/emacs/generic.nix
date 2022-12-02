@@ -169,6 +169,7 @@ let emacs = (if withMacport then llvmPackages_6.stdenv else stdenv).mkDerivation
 
   configureFlags = [
     "--disable-build-details" # for a (more) reproducible build
+    "--without-compress-install"
     "--with-modules"
   ] ++
     (lib.optional stdenv.isDarwin
